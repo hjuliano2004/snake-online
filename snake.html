@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="snake.css">
+    <title>jogo da cobrinha</title>
+</head>
+<body>
+    <main>
+
+
+        <section id="gameOver">
+            <h1>FIM DE JOGO</h1>
+            <p>voce colidiu com <span id="colisao"></span></p>
+            <p>pontuacao: <span>50</span></p>
+            <button onclick="recomecar()">recomeçar</button>
+            <button onclick="">menu principal</button>
+        </section>
+
+        <section class="painel">
+            <p>pontuacao: <span id="pontuacao">00</span></p>
+        </section>
+<button onclick="painel.funcaoPausa()" id="pausa">pausa</button>
+
+
+
+
+
+        <canvas width="600" height="600"></canvas>
+
+        
+    </main>
+
+
+    <button onclick="controle.cima()">cima</button>
+    <button onclick="controle.direita()">direita</button>
+
+    <button onclick="incremento()">incremento</button>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
