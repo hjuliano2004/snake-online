@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="snake.css">
+    <link rel="stylesheet" href="painel.css">
     <title>jogo da cobrinha</title>
 </head>
 <body>
     <main>
 
+        <section id="menuPrincipal">
+            <h1>Snake</h1>
+            <p>selecione o modo de jogo</p>
+            <button>clássico</button>
+            <button>labirintos</button>
+            <div>
+                <p>dificuldade</p>
+                <button onclick="dificuldade()">normal</button>
+            </div>
+        </section>
+
 
         <section id="gameOver">
             <h1>FIM DE JOGO</h1>
             <p>voce colidiu com <span id="colisao"></span></p>
-            <p>pontuacao: <span>50</span></p>
+            <p>pontuacao: <span id="pontosTotais">00</span></p>
             <button onclick="recomecar()">recomeçar</button>
             <button onclick="">menu principal</button>
         </section>
@@ -21,7 +33,7 @@
         <section class="painel">
             <p>pontuacao: <span id="pontuacao">00</span></p>
         </section>
-<button onclick="painel.funcaoPausa()" id="pausa">pausa</button>
+<button onclick="painel.funcaoPausa()" id="pausa" title="ou barra de espaço">pausa</button>
 
 
 
@@ -33,10 +45,12 @@
     </main>
 
 
-    <button onclick="controle.cima()">cima</button>
-    <button onclick="controle.direita()">direita</button>
-
-    <button onclick="incremento()">incremento</button>
+    <div id="controle">
+    <button class="controles" onclick="controle.cima()">cima</button>
+    <button class="controles" onclick="controle.esquerda()">esquerda</button>
+    <button class="controles" onclick="controle.direita()">direita</button>
+    <button class="controles" onclick="controle.baixo()">baixo</button>
+    </div>
 
     <script type="module" src="main.js"></script>
 </body>

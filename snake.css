@@ -1,48 +1,20 @@
-body{
-    background-color: rgb(17, 16, 16);
+
+/* Seção principal */
+main {
+    max-width: 700px;
+    margin: 2rem auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
 
-canvas{
-    border: 1px solid white;
-    background-color: black;
+/* Ajuste para o canvas centralizado */
+canvas {
+    display: block;
+    margin: 0 auto;
+    background: rgba(30, 30, 30, 0.96);
+    width: 80%;
 }
 
-main{
-    text-align: center;
-}
-
-#gameOver{
-    background-color: white;
-    position: absolute;
-    top:30%;
-    left:50%;
-    transform: translate(-50%, -50%);
+#controle{
     display: none;
-    padding: 30px;
-}
-
-#pausa{
-    font-size: xx-large;
-    background-color: red;
-    border-radius: 10px;
-    color: white;
-    position: absolute;
-    top:200px;
-    right: 20%;
-}
-
-canvas{
-    width: 45%;
-}
-
-.painel{
-    background-color: white;
-    position: absolute;
-    left:10%;
-    top:5%;
-}
-
-#pontuacao{
-    font-size: 50px;
-    color: yellowgreen;
 }

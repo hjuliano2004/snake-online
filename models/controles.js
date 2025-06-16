@@ -2,7 +2,7 @@ import { tamanho } from "../cenario/Cenario.js";
 import { cobra } from "./cobra.js"
 import { gameOver } from "./gameOver.js";
 
-let pontuacao = document.getElementById("pontuacao");
+export let pontuacao = document.getElementById("pontuacao");
 
 export let controle = {
 
@@ -44,6 +44,9 @@ export let controle = {
             case "ArrowRight":
                 controle.direita();
                 break;
+            case " ":
+            case "Spacebar":
+            painel.funcaoPausa();
         }})
 
 }

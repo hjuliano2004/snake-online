@@ -1,0 +1,114 @@
+#gameOver {
+    display: none; /* Mostre com display: flex quando o jogo acabar */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+#gameOver h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #ff4444;
+    letter-spacing: 2px;
+}
+
+#gameOver button {
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background 0.2s;
+}
+#gameOver button:hover {
+    background: #ff2222;
+}
+
+/* Estilo para o painel de pontuação */
+.painel {
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.95);
+    color: #222;
+    padding: 0.7rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,1.0);
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    z-index: 10;
+    display: none;
+}
+
+#pausa{
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background 0.2s;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    box-shadow: 0 2px 12px rgba(0,0,0,1.0);
+    display: none;
+}
+
+#pausa:hover{
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    background: #ff2222;
+    font-size: 1.1rem;
+}
+
+#pontuacao{
+    font-size: 50px;
+    color: yellowgreen;
+}
+
+#menuPrincipal{
+    display: block; /* Mostre com display: flex quando o jogo acabar */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+#menuPrincipal button{
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background 0.2s;
+}
+
+#menuPrincipal button:hover {
+    background: #ff2222;
+}
