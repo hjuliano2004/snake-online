@@ -1,6 +1,9 @@
 import { parede } from "../cenario/parede.js";
 import { cobra } from "./cobra.js";
 import { painel, pontuacao } from "./controles.js";
+import { menuPrincipal } from "../main.js";
+import { jogo } from "../main.js";
+import { ctx } from "../cenario/Cenario.js";
 
 let menuFim = document.getElementById("gameOver");
 let colisao = document.getElementById("colisao");
@@ -42,7 +45,15 @@ export let gameOver = {
                 pontuacao.innerText = "00";
     },
 
+    menu: function(){
+        menuFim.style.display = "none";
+        menuPrincipal.style.display = "block";
+        cobra.redefinir();
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);       
+    },
+
     morte: false
 }
 
 window.recomecar = gameOver.recomecar;
+window.menu = gameOver.menu;

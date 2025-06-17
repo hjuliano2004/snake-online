@@ -13,11 +13,11 @@
         <section id="menuPrincipal">
             <h1>Snake</h1>
             <p>selecione o modo de jogo</p>
-            <button>clássico</button>
+            <button onclick="classico()">clássico</button>
             <button>labirintos</button>
             <div>
                 <p>dificuldade</p>
-                <button onclick="dificuldade()">normal</button>
+                <button id="dificuldade" onclick="dificuldade()">normal</button>
             </div>
         </section>
 
@@ -27,7 +27,7 @@
             <p>voce colidiu com <span id="colisao"></span></p>
             <p>pontuacao: <span id="pontosTotais">00</span></p>
             <button onclick="recomecar()">recomeçar</button>
-            <button onclick="">menu principal</button>
+            <button onclick="menu()">menu principal</button>
         </section>
 
         <section class="painel">
