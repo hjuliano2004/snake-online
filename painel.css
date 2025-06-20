@@ -37,7 +37,7 @@
 }
 
 /* Estilo para o painel de pontuação */
-.painel {
+#painel {
     position: absolute;
     top: 20px;
     left: 15%;

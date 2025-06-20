@@ -1,6 +1,6 @@
 import { parede } from "../cenario/parede.js";
 import { cobra } from "./cobra.js";
-import { painel, pontuacao } from "./controles.js";
+import { painel, painelPontos, pontuacao } from "./controles.js";
 import { menuPrincipal } from "../main.js";
 import { jogo } from "../main.js";
 import { ctx } from "../cenario/Cenario.js";
@@ -10,15 +10,22 @@ let colisao = document.getElementById("colisao");
 let pontosTotais = document.getElementById("pontosTotais");
 
 export let gameOver = {
+    telaDeMorte: function(){//define valores pra tela de morte
+    this.morte = true;
+    cobra.direcao = undefined;
+    pontosTotais.innerText = painel.pontos;
+    painelPontos.style.display = "none";
+    },
+
     colisaoParede: function(){
         for(let i=0;i<parede.parede.length;i++){
             if(cobra.cabeca().x == parede.parede[i].x &&
                cobra.cabeca().y == parede.parede[i].y){
 
-                this.morte = true;
-                cobra.direcao = undefined;
+                menuFim.style.display = "block";
                 colisao.textContent = "a parede";
-                pontosTotais.innerText = painel.pontos;
+
+                gameOver.telaDeMorte();
             }
         }
     },
@@ -27,12 +34,11 @@ export let gameOver = {
         for(let i=1;i<cobra.corpo.length;i++){
             if(cobra.cabeca().x == cobra.corpo[i].x && 
                cobra.cabeca().y == cobra.corpo[i].y){
-                menuFim.style.display = "block";
 
-                this.morte = true;
-                cobra.direcao = undefined;
+                menuFim.style.display = "block";
                 colisao.textContent = "o proprio corpo";
-                pontosTotais.innerText = painel.pontos;
+
+                gameOver.telaDeMorte();
                }
         }
     },
@@ -43,15 +49,16 @@ export let gameOver = {
                 gameOver.morte = false;
                 painel.pontos = 0;
                 pontuacao.innerText = "00";
+                painelPontos.style.display = "block";
     },
 
     menu: function(){
         menuFim.style.display = "none";
         menuPrincipal.style.display = "block";
         cobra.redefinir();
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);       
+        clearTimeout(jogo); 
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     },
-
     morte: false
 }
 

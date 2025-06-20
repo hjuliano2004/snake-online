@@ -2,9 +2,11 @@ import { tamanho } from "../cenario/Cenario.js";
 import { cobra } from "./cobra.js";
 import { gameOver } from "./gameOver.js";
 
-export let pontuacao = document.getElementById("pontuacao");
-
 let dificuldadeBtn = document.getElementById("dificuldade");
+export let pontuacao = document.getElementById("pontuacao");
+export let pausaBtn = document.getElementById("pausa");
+export let painelPontos = document.getElementById("painel"); 
+
 
 export let controle = {
   cima: function () {
@@ -61,9 +63,10 @@ export let controle = {
       case "ArrowRight":
         controle.direita();
         break;
-      case " ":
+    /*  case " ":
       case "Spacebar":
         painel.funcaoPausa();
+        */ //case
     }
   }),
 };
@@ -90,15 +93,18 @@ export function movimentacao() {
 }
 
 export let painel = {
+
+  pontos: 0,
   pausa: false,
+  sequencia: 1,
+
   funcaoPausa: function () {
     if (cobra.direcao) {
       this.pausa = !this.pausa;
     }
   },
-  pontos: 0,
 
-  incremento: function () {
+  incremento: function() {
     this.pontos = this.pontos + 10;
     pontuacao.textContent = this.pontos;
   },
@@ -115,10 +121,9 @@ export let painel = {
     {
       nivel: "dificil",
       velocidade: 80,
-    },
+    }
   ],
 
-  sequencia: 1,
 
   dificuldade: function(){
     painel.sequencia++;
@@ -126,7 +131,7 @@ export let painel = {
         painel.sequencia = 0;
     }
     dificuldadeBtn.innerText = painel.dificuldades[painel.sequencia].nivel;
-  },
+  }
 }
 
 window.controle = controle;

@@ -6,14 +6,17 @@ import { painel } from './models/controles.js';
 import { comida } from './models/comida.js';
 import { gameOver } from './models/gameOver.js';
 import { controle } from './models/controles.js';
+import { pausaBtn } from './models/controles.js';
+import { painelPontos } from './models/controles.js'; 
+import { labirinto1 } from './models/labirinto.js';
+import { parede } from './cenario/parede.js';
 
 export let menuPrincipal = document.getElementById("menuPrincipal");
 
 export let jogo = null;
 
-function classico(){
-
-    if(jogo){
+function inicio(){//garante o inicio correto do jogo em qualquer modo
+        if(jogo){
         clearInterval(jogo);
     }
     clearInterval(jogo);
@@ -22,10 +25,21 @@ function classico(){
     cobra.redefinir();
     comida.drop();
     gameOver.morte = false;
+    pausaBtn.style.display = "block";
+    painelPontos.style.display = "block";
+}
 
+function classico(){
+
+    inicio();
+    labirinto1();
 jogo = setInterval(()=>{
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     grade();
+    parede.render(parede.parede);
+
+
+
     comida.comer();
     cobra.render();
     controle.dobra();

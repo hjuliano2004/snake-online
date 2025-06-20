@@ -6,7 +6,7 @@ export let parede = {
     vertical : function(x, y, z){//z representa o final da linha
         y = (y * tamanho)-tamanho;
         while(y<z*tamanho){
-            parede.parede.push({x: (x*tamanho)-tamanho, y: y, cor: "white"});
+            parede.parede.push({x: (x*tamanho)-tamanho, y: y, cor: "yellow"});
             y += tamanho;
         }
     },
@@ -15,7 +15,7 @@ export let parede = {
         x = (x*tamanho)-tamanho;
 
         while(x<z*tamanho){
-            parede.parede.push({x: x, y: (y*tamanho)-tamanho, cor: "white"});
+            parede.parede.push({x: x, y: (y*tamanho)-tamanho, cor: "yellow"});
             x += tamanho;
         }
 
@@ -27,4 +27,3 @@ export let parede = {
         }
     }
 } 
-
