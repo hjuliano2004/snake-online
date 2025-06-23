@@ -8,48 +8,73 @@ import { gameOver } from './models/gameOver.js';
 import { controle } from './models/controles.js';
 import { pausaBtn } from './models/controles.js';
 import { painelPontos } from './models/controles.js'; 
-import { labirinto1 } from './models/labirinto.js';
+import { fase, labirinto1 } from './models/labirinto.js';
 import { parede } from './cenario/parede.js';
 
 export let menuPrincipal = document.getElementById("menuPrincipal");
 
 export let jogo = null;
 
-function inicio(){//garante o inicio correto do jogo em qualquer modo
-        if(jogo){
-        clearInterval(jogo);
-    }
-    clearInterval(jogo);
+export function inicio(){//garante o inicio correto do jogo em qualquer modo
 
     menuPrincipal.style.display = "none";
-    cobra.redefinir();
+    cobra.redefinir();//é necessario definir a posiçao da cobra antes de dropar uma nova comida
     comida.drop();
+    comida.correcao();
     gameOver.morte = false;
     pausaBtn.style.display = "block";
     painelPontos.style.display = "block";
 }
 
 function classico(){
+    clearInterval(jogo);
 
     inicio();
-    labirinto1();
+    
 jogo = setInterval(()=>{
+
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     grade();
-    parede.render(parede.parede);
-
-
-
     comida.comer();
     cobra.render();
     controle.dobra();
     movimentacao();
     comida.render(comida.comida);
     gameOver.colisaoCorpo();
+
+}, painel.dificuldades[painel.sequencia].velocidade);//a velocidade é determinada pela dificuldade
+
+}
+
+
+
+function labirintos(){
+    clearInterval(jogo);
+
+    labirinto1();//é necessario criar as paredes antes de dropar a comida
+    inicio();
+    
+jogo = setInterval(()=>{
+
+    fase();
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    grade();
+    parede.render();
+
+
+    comida.comer();
+    movimentacao();
+    controle.dobra();
+    cobra.render();
+    comida.render();
+    gameOver.colisaoCorpo();
     gameOver.colisaoParede();
-}, painel.dificuldades[painel.sequencia].velocidade);
+
+}, painel.dificuldades[painel.sequencia].velocidade);//a velocidade é determinada pela dificuldade
+
 }
 
 window.painel = painel;
 window.classico = classico;
+window.labirintos = labirintos;
 window.dificuldade = painel.dificuldade;

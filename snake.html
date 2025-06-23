@@ -14,7 +14,7 @@
             <h1>Snake</h1>
             <p>selecione o modo de jogo</p>
             <button onclick="classico()">clássico</button>
-            <button>labirintos</button>
+            <button onclick="labirintos()">labirintos</button>
             <div>
                 <p>dificuldade</p>
                 <button id="dificuldade" onclick="dificuldade()">normal</button>
@@ -33,7 +33,15 @@
         <section id="painel">
             <p>pontuacao: <span id="pontuacao">00</span></p>
         </section>
+
 <button onclick="painel.funcaoPausa()" id="pausa" title="ou barra de espaço">pausa</button>
+
+        <section id="conclusao">
+            <h1>Parabéns</h1>
+            <p>você concluiu o modo <span id="modo">labirintos</span></p>
+            <button onclick="labirintos()">recomeçar</button>
+            <button onclick="menu()">menu principal</button>
+        </section>
 
 
 

@@ -21,8 +21,9 @@ export let parede = {
 
     },
 
-    render : function(lista){
-        for(let i=0;i<lista.length;i++){
+    render : function(){
+        
+        for(let i=0;i<parede.parede.length;i++){
             bloco(parede.parede[i]);
         }
     }

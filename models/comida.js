@@ -12,12 +12,13 @@ function random(){
     return {
         x: Math.floor(Math.random() * 20) * tamanho,
         y: Math.floor(Math.random() * 20) * tamanho,
-        cor: `#${cores()}${cores()}${cores()}`
+        cor: `#${cores()}${cores()}${cores()}`,
+        comida: true
     } 
 }
 
 export let comida = {
-    comida: {x: undefined, y: undefined, cor: undefined},
+    comida: {x: undefined, y: undefined, cor: undefined, comida: true},
 
     drop: function(){
         this.comida = random();
@@ -41,10 +42,8 @@ export let comida = {
     correcao: function(){
             let colide = false;
 
-
         do{
             colide = false;
-
             for(let i=0; i<cobra.corpo.length;i++){
                 if(cobra.corpo[i].x === this.comida.x &&
                    cobra.corpo[i].y === this.comida.y){
@@ -54,8 +53,8 @@ export let comida = {
             }
 
             for(let i=0;i<parede.parede.length;i++){
-                if(parede.parede[i].x === this.comida.x &&
-                   parede.parede[i].y === this.comida.y){
+                if(parede.parede[i].x === comida.comida.x &&
+                   parede.parede[i].y === comida.comida.y){
                     colide = true;
                     break;
                 }

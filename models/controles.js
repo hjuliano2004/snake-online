@@ -1,5 +1,6 @@
 import { tamanho } from "../cenario/Cenario.js";
 import { cobra } from "./cobra.js";
+import { comida } from "./comida.js";
 import { gameOver } from "./gameOver.js";
 
 let dificuldadeBtn = document.getElementById("dificuldade");
@@ -22,7 +23,7 @@ export let controle = {
   },
 
   esquerda: function () {
-    if (!painel.pausa && cobra.direcao != "direita" && !gameOver.morte) {
+    if (!painel.pausa && cobra.direcao != "direita" && cobra.direcao && !gameOver.morte) {
       cobra.direcao = "esquerda";
     }
   },
@@ -34,6 +35,7 @@ export let controle = {
   },
 
   dobra: function () {
+  
     if (cobra.cabeca().x < 0) {
       cobra.corpo[0].x = 570;
     }
@@ -47,6 +49,7 @@ export let controle = {
     if (cobra.cabeca().y > 570) {
       cobra.corpo[0].y = 0;
     }
+      comida.comer();
   },
 
   teclado: window.addEventListener("keydown", function (event) {

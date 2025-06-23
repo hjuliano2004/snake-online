@@ -4,10 +4,13 @@ import { painel, painelPontos, pontuacao } from "./controles.js";
 import { menuPrincipal } from "../main.js";
 import { jogo } from "../main.js";
 import { ctx } from "../cenario/Cenario.js";
+import { fases, labirinto1, nivelLabirinto } from "./labirinto.js";
+
 
 let menuFim = document.getElementById("gameOver");
 let colisao = document.getElementById("colisao");
 let pontosTotais = document.getElementById("pontosTotais");
+let conclusao = document.getElementById("conclusao");
 
 export let gameOver = {
     telaDeMorte: function(){//define valores pra tela de morte
@@ -46,10 +49,17 @@ export let gameOver = {
     recomecar: function(){
                 cobra.redefinir();
                 menuFim.style.display = "none";
+                conclusao.style.display = "none";
+
                 gameOver.morte = false;
                 painel.pontos = 0;
                 pontuacao.innerText = "00";
                 painelPontos.style.display = "block";
+                
+                if(nivelLabirinto >= fases[nivelLabirinto]().exigencia){
+                    nivelLabirinto = 0;
+                    labirinto1();
+                }
     },
 
     menu: function(){

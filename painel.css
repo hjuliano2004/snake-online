@@ -112,3 +112,35 @@
 #menuPrincipal button:hover {
     background: #ff2222;
 }
+
+#conclusao{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+#conclusao button{
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: background 0.2s;
+}
+
+#conclusao button:hover {
+    background: #ff2222;
+}
