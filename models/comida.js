@@ -4,6 +4,8 @@ import { parede } from "../cenario/parede.js";
 import { cobra } from "./cobra.js";
 import { painel } from "./controles.js";
 
+let som = new Audio("./models/Batata.mp3");
+
 function cores(){
 return Math.floor(Math.random() * 100);
 }
@@ -27,10 +29,12 @@ export let comida = {
     comer: function(){
         if(cobra.cabeca().x == comida.comida.x &&
          cobra.cabeca().y == comida.comida.y){
-            this.drop();
             cobra.incremento();
             painel.incremento();
             comida.correcao();
+            
+            som.currentTime = 0.5;
+            som.play();
         }
 
     },
@@ -66,4 +70,5 @@ export let comida = {
 
         }while(colide);
     }
+    
 }

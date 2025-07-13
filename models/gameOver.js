@@ -4,7 +4,7 @@ import { painel, painelPontos, pontuacao } from "./controles.js";
 import { menuPrincipal } from "../main.js";
 import { jogo } from "../main.js";
 import { ctx } from "../cenario/Cenario.js";
-import { fases, labirinto1, nivelLabirinto } from "./labirinto.js";
+import { fases, nivelLabirinto, setNivelLabirinto} from "./labirinto.js";
 
 
 let menuFim = document.getElementById("gameOver");
@@ -66,8 +66,12 @@ export let gameOver = {
         menuFim.style.display = "none";
         menuPrincipal.style.display = "block";
         cobra.redefinir();
-        clearTimeout(jogo); 
+        clearInterval(jogo); 
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        setNivelLabirinto(0);
+        painel.pontos = 0;
+        pontuacao.textContent = "00";
     },
     morte: false
 }

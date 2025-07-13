@@ -66,10 +66,10 @@ export let controle = {
       case "ArrowRight":
         controle.direita();
         break;
-    /*  case " ":
+      case " ":
       case "Spacebar":
         painel.funcaoPausa();
-        */ //case
+         //case
     }
   }),
 };

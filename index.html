@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="snake.css">
+    <link rel="stylesheet" href="painel.css">
+    <title>jogo da cobrinha</title>
+</head>
+<body>
+    <main>
+
+        <section id="menuPrincipal">
+            <h1>Snake</h1>
+            <p>selecione o modo de jogo</p>
+            <button onclick="classico()">clássico</button>
+            <button onclick="labirintos()">labirintos</button>
+            <div>
+                <p>dificuldade</p>
+                <button id="dificuldade" onclick="dificuldade()">normal</button>
+            </div>
+        </section>
+
+
+        <section id="gameOver">
+            <h1>FIM DE JOGO</h1>
+            <p>voce colidiu com <span id="colisao"></span></p>
+            <p>pontuacao: <span id="pontosTotais">00</span></p>
+            <button onclick="recomecar()">recomeçar</button>
+            <button onclick="menu()">menu principal</button>
+        </section>
+
+        <section id="painel">
+            <p>pontuacao: <span id="pontuacao">00</span></p>
+        </section>
+
+<button onclick="painel.funcaoPausa()" id="pausa" title="ou barra de espaço">pausa</button>
+
+        <section id="conclusao">
+            <h1>Parabéns</h1>
+            <p>você concluiu o modo <span id="modo">labirintos</span></p>
+            <button onclick="labirintos()">recomeçar</button>
+            <button onclick="menu()">menu principal</button>
+        </section>
+
+
+
+
+
+        <canvas width="600" height="600"></canvas>
+
+        
+    </main>
+
+
+    <div id="controle">
+    <button class="controles" onclick="controle.cima()">cima</button>
+    <button class="controles" onclick="controle.esquerda()">esquerda</button>
+    <button class="controles" onclick="controle.direita()">direita</button>
+    <button class="controles" onclick="controle.baixo()">baixo</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>

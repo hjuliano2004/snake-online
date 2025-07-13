@@ -8,7 +8,7 @@ import { gameOver } from './models/gameOver.js';
 import { controle } from './models/controles.js';
 import { pausaBtn } from './models/controles.js';
 import { painelPontos } from './models/controles.js'; 
-import { fase, labirinto1 } from './models/labirinto.js';
+import { fase} from './models/labirinto.js';
 import { parede } from './cenario/parede.js';
 
 export let menuPrincipal = document.getElementById("menuPrincipal");
@@ -51,7 +51,7 @@ jogo = setInterval(()=>{
 function labirintos(){
     clearInterval(jogo);
 
-    labirinto1();//é necessario criar as paredes antes de dropar a comida
+    //labirinto1();//é necessario criar as paredes antes de dropar a comida
     inicio();
     
 jogo = setInterval(()=>{
