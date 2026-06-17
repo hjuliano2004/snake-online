@@ -34,8 +34,8 @@ canvas {
 
 #controle svg{
     color: rgb(0, 119, 255);
-    width: 0.5in;
-    height: 0.5in;
+    width: 0.8in;
+    height: 0.8in;
 }
 
 @media (max-width: 590px){
