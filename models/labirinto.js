@@ -7,7 +7,7 @@ export let nivelLabirinto = 0;
 
     function labirinto0(){
         parede.parede = [];
-        return {exigencia: 500, nivel: 1}
+        return {exigencia: 500, nivel: 0}
     }
 
     function labirinto1(){
@@ -26,7 +26,7 @@ export let nivelLabirinto = 0;
     parede.orizontal(14, 20, 20);
     parede.vertical(20, 14, 19);
 
-    return {exigencia: 500, nivel: 2};
+    return {exigencia: 500, nivel: 1};
 }
 
     function labirinto2(){
@@ -39,7 +39,7 @@ export let nivelLabirinto = 0;
         parede.vertical(20, 1, 19);
 
 
-        return {exigencia: 500, nivel: 3}
+        return {exigencia: 500, nivel: 2}
     }
 
      function labirinto3(){

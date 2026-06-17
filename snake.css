@@ -1,10 +1,15 @@
-
+*{
+    margin: 0%;
+    padding: 0;
+    border: 0px;
+}
 /* Seção principal */
 main {
     max-width: 700px;
     margin: 2rem auto;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+
 }
 
 /* Ajuste para o canvas centralizado */
@@ -17,4 +22,28 @@ canvas {
 
 #controle{
     display: none;
+    text-align: center;
+}
+
+#controle button{
+    padding: 0;
+    border: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+#controle svg{
+    color: rgb(0, 119, 255);
+    width: 0.5in;
+    height: 0.5in;
+}
+
+@media (max-width: 590px){
+    #controle{
+        display: block;
+    }
+
+    canvas{
+        width: 70%;
+    }
 }

@@ -36,38 +36,15 @@
     background: #ff2222;
 }
 
-/* Estilo para o painel de pontuação */
-#painel {
-    position: absolute;
-    top: 20px;
-    left: 15%;
-    transform: translateX(-50%);
-    background: rgba(255,255,255,0.95);
-    color: #222;
-    padding: 0.7rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,1.0);
-    font-size: 1.2rem;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    z-index: 10;
-    display: none;
-}
-
 #pausa{
-    background: #ff4444;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin: 0 0.5rem;
-    transition: background 0.2s;
+    display: block;
+    background-color: #ff2222;
+    width: 0.5in;
+    height: 0.5in;
+
     position: absolute;
-    right: 10%;
-    top: 10%;
-    box-shadow: 0 2px 12px rgba(0,0,0,1.0);
-    display: none;
+
+    right: 5%;
 }
 
 #pausa:hover{
